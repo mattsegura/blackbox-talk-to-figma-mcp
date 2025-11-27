@@ -1,6 +1,6 @@
 {
-  "name": "Cursor MCP Plugin",
-  "id": "cursor-mcp-plugin",
+  "name": "Blackbox MCP Plugin",
+  "id": "blackbox-mcp-plugin",
   "api": "1.0.0",
   "main": "code.js",
   "ui": "ui.html",

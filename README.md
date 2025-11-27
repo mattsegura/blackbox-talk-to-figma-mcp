@@ -1,13 +1,11 @@
-# Cursor Talk to Figma MCP
+# Blackbox Talk to Figma MCP
 
-This project implements a Model Context Protocol (MCP) integration between Cursor AI and Figma, allowing Cursor to communicate with Figma for reading designs and modifying them programmatically.
-
-https://github.com/user-attachments/assets/129a14d2-ed73-470f-9a4c-2240b2a4885c
+This project implements a Model Context Protocol (MCP) integration between Blackbox AI and Figma, allowing Blackbox to communicate with Figma for reading designs and modifying them programmatically.
 
 ## Project Structure
 
 - `src/talk_to_figma_mcp/` - TypeScript MCP server for Figma integration
-- `src/cursor_mcp_plugin/` - Figma plugin for communicating with Cursor
+- `src/blackbox_mcp_plugin/` - Figma plugin for communicating with Blackbox AI
 - `src/socket.ts` - WebSocket server that facilitates communication between the MCP server and Figma plugin
 
 ## Get Started
@@ -18,7 +16,7 @@ https://github.com/user-attachments/assets/129a14d2-ed73-470f-9a4c-2240b2a4885c
 curl -fsSL https://bun.sh/install | bash
 ```
 
-2. Run setup, this will also install MCP in your Cursor's active project
+2. Run setup, this will also install MCP in your Blackbox's active project
 
 ```bash
 bun setup
@@ -30,21 +28,21 @@ bun setup
 bun socket
 ```
 
-4. **NEW** Install Figma plugin from [Figma community page](https://www.figma.com/community/plugin/1485687494525374295/cursor-talk-to-figma-mcp-plugin) or [install locally](#figma-plugin)
+4. Install Figma plugin locally (see [Figma Plugin](#figma-plugin) section below)
 
 ## Quick Video Tutorial
 
-[Video Link](https://www.linkedin.com/posts/sonnylazuardi_just-wanted-to-share-my-latest-experiment-activity-7307821553654657024-yrh8)
+Coming soon!
 
 ## Design Automation Example
 
 **Bulk text content replacement**
 
-Thanks to [@dusskapark](https://github.com/dusskapark) for contributing the bulk text replacement feature. Here is the [demo video](https://www.youtube.com/watch?v=j05gGT3xfCs).
+Thanks to [@dusskapark](https://github.com/dusskapark) for contributing the bulk text replacement feature.
 
 **Instance Override Propagation**
 Another contribution from [@dusskapark](https://github.com/dusskapark)
-Propagate component instance overrides from a source instance to multiple target instances with a single command. This feature dramatically reduces repetitive design work when working with component instances that need similar customizations. Check out our [demo video](https://youtu.be/uvuT8LByroI).
+Propagate component instance overrides from a source instance to multiple target instances with a single command. This feature dramatically reduces repetitive design work when working with component instances that need similar customizations.
 
 ## Development Setup
 
@@ -63,16 +61,16 @@ To develop, update your mcp config to direct to your local directory.
 
 ## Manual Setup and Installation
 
-### MCP Server: Integration with Cursor
+### MCP Server: Integration with Blackbox
 
-Add the server to your Cursor MCP configuration in `~/.cursor/mcp.json`:
+Add the server to your Blackbox MCP configuration:
 
 ```json
 {
   "mcpServers": {
     "TalkToFigma": {
       "command": "bunx",
-      "args": ["cursor-talk-to-figma-mcp@latest"]
+      "args": ["blackbox-talk-to-figma-mcp@latest"]
     }
   }
 }
@@ -90,7 +88,7 @@ bun socket
 
 1. In Figma, go to Plugins > Development > New Plugin
 2. Choose "Link existing plugin"
-3. Select the `src/cursor_mcp_plugin/manifest.json` file
+3. Select the `src/blackbox_mcp_plugin/manifest.json` file
 4. The plugin should now be available in your Figma development plugins
 
 ## Windows + WSL Guide
@@ -117,10 +115,10 @@ bun socket
 ## Usage
 
 1. Start the WebSocket server
-2. Install the MCP server in Cursor
-3. Open Figma and run the Cursor MCP Plugin
+2. Install the MCP server in Blackbox
+3. Open Figma and run the Blackbox MCP Plugin
 4. Connect the plugin to the WebSocket server by joining a channel using `join_channel`
-5. Use Cursor to communicate with Figma using the MCP tools
+5. Use Blackbox to communicate with Figma using the MCP tools
 
 ## MCP Tools
 
@@ -217,7 +215,7 @@ The MCP server includes several helper prompts to guide you through complex desi
 1. Navigate to the Figma plugin directory:
 
    ```
-   cd src/cursor_mcp_plugin
+   cd src/blackbox_mcp_plugin
    ```
 
 2. Edit code.js and ui.html

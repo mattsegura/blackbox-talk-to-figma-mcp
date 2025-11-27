@@ -1,11 +1,11 @@
 {
-  "name": "cursor-talk-to-figma-mcp",
-  "description": "Cursor Talk to Figma MCP",
+  "name": "blackbox-talk-to-figma-mcp",
+  "description": "Blackbox TalkToFigma: MCP integration between Blackbox and Figma, allowing Blackbox Agentic AI to communicate with Figma for reading designs and modifying them programmatically",
   "version": "0.3.5",
   "module": "dist/server.js",
   "main": "dist/server.js",
   "bin": {
-    "cursor-talk-to-figma-mcp": "dist/server.js"
+    "blackbox-talk-to-figma-mcp": "dist/server.js"
   },
   "files": [
     "dist",

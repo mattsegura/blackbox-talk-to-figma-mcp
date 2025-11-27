@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "Talk to Figma MCP": {
+      "command": "bun",
+      "args": [
+        "run",
+        "/Users/matthewsegura/Desktop/blackbox-talk-to-figma-mcp/dist/server.js"
+      ]
+    }
+  }
+}

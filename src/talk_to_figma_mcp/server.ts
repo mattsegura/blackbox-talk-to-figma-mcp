@@ -3079,14 +3079,9 @@ server.tool(
 
 // Start the server
 async function main() {
-  try {
-    // Try to connect to Figma socket server
-    connectToFigma();
-  } catch (error) {
-    logger.warn(`Could not connect to Figma initially: ${error instanceof Error ? error.message : String(error)}`);
-    logger.warn('Will try to connect when the first command is sent');
-  }
-
+  // Don't connect to Figma at startup - only connect when first command is sent
+  // This prevents blocking the MCP initialization
+  
   // Start the MCP server with stdio transport
   const transport = new StdioServerTransport();
   await server.connect(transport);
